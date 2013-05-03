@@ -5,6 +5,6 @@ gem 'async_sinatra', :git => 'git://github.com/raggi/async_sinatra.git', :requir
 
 gem 'unicorn'
 
-#gem 'net-ssh-kerberos', :git => 'git://github.com/joekhoobyar/net-ssh-kerberos.git'
+#gem 'net-ssh-kerberos', :git => 'git://github.com/Lax/net-ssh-kerberos.git'
 gem 'rvm-capistrano'
 

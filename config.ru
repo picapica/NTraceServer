@@ -6,6 +6,6 @@ require 'rubygems'
 require 'bundler'
 Bundler.require
 
-require './ntrace'
+require './app'
 
 run NTraceServer
