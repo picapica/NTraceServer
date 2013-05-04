@@ -17,4 +17,8 @@ class NTraceServer < Sinatra::Base
       :task_fetch_1 => {:type => 'fetch', :file => 'http://s.xnimg.cn/100k.jpg'}
     }.to_json
   end
+
+  post '/ntrace/api/task/1/post' do
+    params['_uid']
+  end
 end
