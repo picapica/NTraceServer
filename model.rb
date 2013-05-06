@@ -18,7 +18,7 @@ class Task
 
   property :created_by, String, :required => true
 
-  property :description, String, :required => true
+  property :description, String, :required => true, :length => 4096
 end
 
 DataMapper.finalize
