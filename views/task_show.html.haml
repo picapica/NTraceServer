@@ -1,0 +1,19 @@
+-# coding: UTF-8
+
+.row-fluid
+  .row
+    .span2
+      ID
+    .span9
+      =@task.id
+  .row
+    .span2
+      Creator
+    .span9
+      =@task.created_by
+  .row
+    .span2
+      Description
+    .span9
+      %code
+        =@task.description

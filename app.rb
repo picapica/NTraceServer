@@ -59,7 +59,7 @@ class NTraceServer < Sinatra::Base
 
     respond_to do |format|
       format.html {
-        haml :task
+        haml :"task_show"
       }
       format.json {
         @task.to_json
