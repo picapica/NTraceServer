@@ -1,0 +1,40 @@
+-# coding: UTF-8
+!!!
+%html(xml:lang='en' lang='en' xmlns='http://www.w3.org/1999/xhtml')
+  %head
+    %meta(content='text/html;charset=UTF-8' http-equiv='content-type')
+    %meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    %link{:href => "http://s.xnimg.cn/css/bootstrap.min.css", :rel =>"stylesheet", :type => "text/css", :media => "screen" }
+    %link{:href => "http://s.xnimg.cn/css/bootstrap-responsive.min.css", :rel =>"stylesheet", :type => "text/css", :media => "screen" }
+
+    %script{:type => "text/javascript", :src  => "http://s.xnimg.cn/js/jquery-1.9.1.min.js"}
+    %script{:type => "text/javascript", :src  => "http://s.xnimg.cn/js/bootstrap.min.js"}
+
+    <!--[if lt IE 9]>
+    %script{:type => 'text/javascript', :src => "http://html5shim.googlecode.com/svn/trunk/html5.js"}
+    <![endif]-->
+
+    %title
+      portal
+  %body
+
+    = haml :'_header', :layout => false
+
+    .container
+      .container-fluid
+        .row-fluid
+          .span2
+            .well.sidebar-nav
+              %ul#nav-list.nav.nav-list
+                %li.nav-header
+                  头像性能
+                %li
+                  %a{:href => '/ntrace/tasks'} 任务列表
+                %li.divider
+                %li
+                  %a{:href => '#post-record'} #
+
+          .span10
+            = yield
+
+    = haml :'_footer', :layout => false

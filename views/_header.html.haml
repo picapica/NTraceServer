@@ -1,0 +1,39 @@
+-# coding: UTF-8
+.navbar-wrapper
+  .container
+    .navbar.navbar-inverse1.navbar-fixed-top1.navbar-static-top
+      .navbar-inner
+        %a.brand
+          %img{:src => '/images/weios-16.png'}
+          Portal
+
+        %ul.nav
+          %li
+            %a{:href => '/ntrace'}
+              首页
+
+          %li.divider-vertical
+          %li
+            %a{:href => '/ntrace/tasks'}
+              任务
+
+        %ul.nav.pull-right
+          - if authorized?
+            %li.dropdown
+              %a.dropdown-togle{:'data-toggle' => :dropdown}
+                = passport_username
+                %b.caret
+              %ul.dropdown-menu
+                %li
+                  %a{:href => '/me'} 我
+                %li.divider
+                %li
+                  %a{:href => '/logout'} Logout
+
+          - else
+            %li
+              %a{:href => '/login'}
+                登陆
+
+.span12
+  = haml :'_modal', :layout => false
