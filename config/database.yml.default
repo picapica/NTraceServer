@@ -1,5 +1,5 @@
 :default:
   :adapter: sqlite3
-  :database: db/default.sqlite3
+  :database: /tmp/default.sqlite3
   :pool: 5
   :timeout: 5000

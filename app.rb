@@ -84,7 +84,7 @@ class NTraceServer < Sinatra::Base
   end
 
   get '/ntrace/api/task/:id' do
-    @task = Task.get(params:[id])
+    @task = Task.get(params[:id])
 
     @task.description
   end

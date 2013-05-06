@@ -40,7 +40,7 @@ namespace :deploy do
     run "if [ -f #{unicorn_pid} ]; then kill -USR2 `cat #{unicorn_pid}`; else cd #{deploy_to}/current && bundle exec unicorn -c #{unicorn_conf} -E #{rails_env} -D; fi"
   end
   task :start do
-    run "cd #{deploy_to}/current && bundle exec unicorn -c #{unicorn_conf} -E #{rails_env} -D"
+    run "cd #{deploy_to}/current && rvm use 1.9.3 && bundle && bundle exec unicorn -c #{unicorn_conf} -E #{rails_env} -D"
   end
   task :stop do
     run "if [ -f #{unicorn_pid} ]; then kill -QUIT `cat #{unicorn_pid}`; fi"
