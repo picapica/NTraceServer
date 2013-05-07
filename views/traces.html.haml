@@ -1,0 +1,63 @@
+-# coding: UTF-8
+
+.pagination.pagination-centered
+  %ul
+    -if @page == 1
+      %li
+        %a &laquo;
+    -else
+      %li.disabled
+        %a{:href => "?page=#{@page - 1}"} &laquo;
+
+    -(([@page - 5, 1].max)..([@page + 5, @page_count].min)).each do |p|
+      -if p == @page
+        %li.active
+          %a
+            = p
+      -else
+        %li
+          %a{:href => "?page=#{p}"}
+            = p
+
+    -if @page == @page_count
+      %li.disabled
+        %a &raquo;
+    -else
+      %li
+        %a{:href => "?page=#{@page + 1}"} &raquo;
+
+= @page
+of
+= @page_count
+
+%table.table.table-striped.table-hover.table-bordered.table-condensed
+  %caption
+    任务列表
+
+  %thead
+    %tr
+      -@record_properties.each do |p|
+        %th
+          = p
+  %tbody
+    -@records.each do |r|
+      %tr
+        -@record_properties.each do |p|
+          %td
+            %code
+              = r[p]
+
+.pager
+  -if @page == 1
+    %li.previous.disabled
+      %a &laquo;
+  -else
+    %li.previous
+      %a{:href => "?page=#{@page - 1}"} &laquo;
+  -if @page == @page_count
+    %li.next.disabled
+      %a &raquo;
+  -else
+    %li.next
+      %a{:href => "?page=#{@page + 1}"} &raquo;
+

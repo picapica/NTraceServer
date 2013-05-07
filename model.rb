@@ -21,5 +21,17 @@ class Task
   property :description, String, :required => true, :length => 4096
 end
 
+class Trace
+  include DataMapper::Resource
+
+  property :id, Serial
+
+  property :uid, String, :required => true
+
+  property :content, String, :required => true, :length => 65535
+
+  belongs_to :task
+end
+
 DataMapper.finalize
 DataMapper.auto_upgrade!

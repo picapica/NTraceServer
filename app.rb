@@ -79,6 +79,24 @@ class NTraceServer < Sinatra::Base
     redirect '/ntrace/tasks'
   end
 
+  get '/ntrace/traces' do
+    authorize!
+
+    @title = "检测记录"
+    @record_properties = Trace.properties.map {|p| p.name}
+    @records = paginate Trace.all
+
+    respond_to do |format|
+      format.html {
+        haml :"traces"
+      }
+      format.json {
+        content_type 'application/json', :charset => 'utf-8'
+        @traces.to_json
+      }
+    end
+  end
+
   get '/ntrace/api' do
     "api"
   end
@@ -90,6 +108,12 @@ class NTraceServer < Sinatra::Base
   end
 
   post '/ntrace/api/task/:id/post' do
-    params['_uid']
+    @trace = Trace.create(
+        :uid => params['_uid'],
+        :content => request.body.read,
+        :task_id => params[:id]
+    )
+
+    @trace.id
   end
 end
