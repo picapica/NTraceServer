@@ -111,7 +111,7 @@ class NTraceServer < Sinatra::Base
     @trace = Trace.create(
         :uid => params['_uid'],
         :ip => request.ip,
-        :content => request.body.read,
+        :content => JSON.load request.body.read,
         :task_id => params[:id]
     )
 
