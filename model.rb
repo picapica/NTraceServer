@@ -27,6 +27,7 @@ class Trace
   property :id, Serial
 
   property :uid, String, :required => true
+  property :ip, String
 
   property :content, String, :required => true, :length => 65535
 

@@ -110,6 +110,7 @@ class NTraceServer < Sinatra::Base
   post '/ntrace/api/task/:id/post' do
     @trace = Trace.create(
         :uid => params['_uid'],
+        :ip => request.ip,
         :content => request.body.read,
         :task_id => params[:id]
     )
