@@ -1,7 +1,7 @@
-source "http://ruby.taobao.org"
+source "https://rubygems.org"
 
 gem 'sinatra', :require => "sinatra/base"
-gem 'async_sinatra', :git => 'git://github.com/raggi/async_sinatra.git', :require => "sinatra/async"
+#gem 'async_sinatra', :git => 'git://github.com/raggi/async_sinatra.git', :require => "sinatra/async"
 gem "sinatra-respond_to", :git => "git://github.com/cehoffman/sinatra-respond_to.git", :require => 'sinatra/respond_to'
 
 gem 'unicorn'
