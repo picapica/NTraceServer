@@ -69,7 +69,7 @@ GEM
     do_sqlite3 (0.10.17)
       data_objects (= 0.10.17)
     fastercsv (1.5.5)
-    haml (5.1.2)
+    haml (5.2.0)
       temple (>= 0.8.0)
       tilt
     highline (1.7.10)
@@ -98,7 +98,7 @@ GEM
       rack-protection (= 2.0.2)
       tilt (~> 2.0)
     stringex (1.5.1)
-    temple (0.8.1)
+    temple (0.8.2)
     tilt (2.0.10)
     unicorn (5.5.2)
       kgio (~> 2.6)
